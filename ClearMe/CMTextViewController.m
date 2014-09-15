@@ -11,6 +11,7 @@
 @interface CMTextViewController ()
 
 @property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UIButton * clearButton;
 
 @end
 
