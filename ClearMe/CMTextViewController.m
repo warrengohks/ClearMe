@@ -8,9 +8,9 @@
 
 #import "CMTextViewController.h"
 
-@interface CMTextViewController ()
+@interface CMTextViewController () <UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIButton * clearButton;
 
 @end
@@ -21,14 +21,21 @@
 {
     [super viewDidLoad];
 
-    self.textView.text = @"My name is Joshua Howland and I just created a text view using an XIB file.";
-
+    self.textField.text = @"My name is Joshua Howland and I just created a text field using an XIB file.";
+    self.textField.delegate = self;
+    
 }
 
 - (IBAction)buttonTapped:(id)sender {
+    self.textField.text = @"";
+}
 
-    self.textView.text = @"";
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
+    NSLog(@"%@", textField.text);
+
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
