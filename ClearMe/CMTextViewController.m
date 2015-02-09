@@ -11,7 +11,6 @@
 @interface CMTextViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *textField;
-@property (nonatomic, strong) IBOutlet UIButton * clearButton;
 
 @end
 
@@ -20,9 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.textField.text = @"My name is Joshua Howland and I just created a text field using an XIB file.";
-    self.textField.delegate = self;
     
 }
 
